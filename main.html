@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<style type="text/css"> 
-			body {margin: 30px;} 
-		</style>  
-		<meta charset=utf-8 /> 
-		<title>Remove items from a dropdown list</title>
-	</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Color from Dropdown</title>
+</head>
+<body>
 
-	<body>
-		<form> 
-			<select id="colorSelect"> 
-				<option>Red</option> 
-				<option>Green</option> 
-				<option>White</option> 
-				<option>Black</option> 
-			</select> 
-			<input type="button" value="Select and Remove"> 
-		</form>
+    <h2>Choose a color to remove</h2>
 
-		<script type="text/javascript" src="./script.js">
-		</script>
+    <select id="colorSelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>White</option>
+        <option>Black</option>
+    </select>
+    
+    <input type="button" value="Select and Remove" id="remove-item">
 
-	</body>
+    <script>
+        document.getElementById('remove-item').addEventListener('click', function() {
+            // Get the select element by ID
+            var colorSelect = document.getElementById('colorSelect');
+            
+            // Get the selected option index
+            var selectedIndex = colorSelect.selectedIndex;
+            
+            // If an option is selected, remove it
+            if (selectedIndex !== -1) {
+                colorSelect.remove(selectedIndex);
+            }
+        });
+    </script>
 
+</body>
 </html>
